@@ -1,0 +1,22 @@
+body{font-family: 'Trebuchet MS', Arial, sans-serif;}
+
+header {
+    background-color: #C9A3FF;
+    padding: 2em 1em;
+}
+
+main {
+    padding-left: 1em;
+}
+
+a, a:visited {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #655280;
+}
+
+a:hover, a:active {
+    font-style: italic;
+    color: #4E2B80;
+    font-weight: bold;
+}
