@@ -15,7 +15,7 @@
             }
 
             function loadStory(){
-                var storyName = document.getElementByID("name_input").value
+                var storyName = document.getElementById("name_input").value
                 var storyHTML = localStorage.getItem(storyName)
                 document.getElementById("story_editor").value = storyHTML
             }            
