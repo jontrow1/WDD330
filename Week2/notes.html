@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Week 2 Notes</title>
+  <meta name="description" content="This is Week 2 Notes of Jon's Portfolio for WDD330">
+</head>
+<body>
+  <header>
+    <h1>Jonathan R. Trowbridge - WDD 330 Portfolio</h1>
+  </header>
+  <nav>
+
+  </nav>
+  <main>
+    <h2>Week 2 Notes</h2>
+    <h3>Chapter 2:</h3>
+    <ol>
+        <li>JavaScript: Single line comments = // - Multi-line comments = /* "some stuff here" */</li>
+        <li>JavaScript syntax is known as a C-style syntax because similar to C programming language</li>
+        <li>JavaScript statements end with a new line or semicolon. It is best practice to use both so the ASI doesn't cause errors</li>
+        <li>ASI stands for Automatic Semicolon Insertion</li>
+        <li>Block - series of statements inside curly brackets</li>
+        <li>Reserved words: abstract, await, boolean, break, byte, case, catch, char, class, const, continue, debugger, default, delete, do, double, else, enum, export, extends, false, final, finally, float, for, function, goto, if, implements, import, in instanceof, int, interface, let, long, native, new, null, package, private, protected, public, return, short, static, super, switch, synchronized, this, throw, throws, transient, true, try, typeof, var, volatile, void, while, with, yield</li>
+        <li>Not reserved but should be: undefined, NaN, Infinity</li>
+        <li>Data Types: String, Symbol, Number, Boolean, Undefined, Null & Object</li>
+        <li>typeof operator - determine data type</li>
+        <li>Keyword const - when variable won't be reassigned</li>
+        <li><STRONG>Use '=' to declare constant or variable, use '=='' when finding equality></STRONG></li>
+        <li>Let was introduced to replace var because var would allow overwriting built-in methods. Var could not be removed for backwards compatibility.</li>
+        <li>Global scope - variable is defined outside of a block</li>
+        <li>Local scope - variable is defined inside a block</li>
+        <li>When naming variables, give sensible names that describe what it stands for.</li>
+        <li>Constant and variable names are case sensitive</li>
+        <li>Be consistent but JavaScript's built in functions utilize camelcase for variable/constant naming.</li>
+        <li>When using quotes in a string literal, enclose the string with single quote marks, when using apostrophies, enclose with double quote marks or use a backslash in front of the quotation/apostrophy (secape the quotation mark).</li>
+        <li>Shortcut for concatenation is to use the + symbol</li>
+        <li>Template literals are strings that us the backtick symbol (`), allowing the use of quotes/apostrophes and allows javascript to be placed within the string (this I did not know but makes life so much easier!!!).</li>
+        <li>Place JavaScript expression within curly braces with a $ in front and the expression can be placed within Template Literals.</li>
+        <li>Numbers can be represented in Octal, Hexadecimal and even exponential Notation(1e6 = 1000000) along with intergers and float decimals.</li>
+        <li><STRONG>toFixed() will round to determined decimal place</STRONG></li>
+        <li>Infinity is an error value when a number becomes bigger than JavaScript can hanlde both positive and negative.</li>
+        <li>NaN = Not a Number</li>
+        <li>isFinite() checks to see if a value is a number</li>
+        <li>Numbers can be converted to strings and vice-versa</li>
+        <li>null means no value</li>
+        <li>! (Logical NOT), && (Logical AND), || (Logical OR)</li>
+        <li>Don't use ^ for exponents, use ** instead</li>
+    </ol>
+
+    <h3>Chapter 3</h3>
+    <ol>
+      <li>An array is an ordered list of values - const myArray = [];</li>
+      <li>Adding values to an array - myArray[0] = 'Something';</li>
+      <li>Removing values from an array - delete myArray[0];</li>
+      <li>Arrays use .pop() - removes the last item in array, .push() - adds item to end of array, .shift() - removes the first item in array, and .unshift() - adds item to beginning of array</li>
+      <li>myArray.concat() merges arrays together</li>
+      <li>myArray.join() can turn arrays into strings</li>
+      <li>when sorting arrays, numbers get sorted alphabetically</li>
+      <li>Multidimensional arrays - array of arrays</li>
+      <li>Set - collection of unique values - const list = new Set();</li>
+      <li>.add() will add to a set, arrays can be added but if duplicates, will only show one</li>
+      <li>.size() and .has() also methods to sets</li>
+      <li>.delete() remove a value, .clear() removes all values to sets</li>
+      <li>Maps are similar to ditcionaries in Python</li>
+      <li>.set() adds to map, .get() looks up value based on key, .has() checks if key is in map, .size, .delete(), .clear</li>
+      <li>if (condition) {}</li>
+      <li>if (condition) {} else {}</li>
+      <li><STRONG>condition ? (if true) : (if false)</STRONG></li>
+      <li>if (num == n) {} else if {} ... else {} or switch (num) {case n: (if true); case n: (if true);... default: (if true); break;}</li>
+      <li>while (condition) {}</li>
+      <li><STRONG>AVOID INFINITE LOOPS - make sure while loops end!!!</STRONG></li>
+      <li>do {do something} while (condition) - will always run code once, regardless if condition is met</li>
+      <li>for (initialization; condition; after) {}</li>
+      <li>for loops can be nested</li>
+      <li>use for loops to iterate over arrays but better to use for of loop - for(const value in myArray){console.log(value);}</li>
+      <li>can do the same for sets and maps</li>
+    </ol>
+
+    <h3>Chapter 4</h3>
+    <ol>
+      <li>function name() {stuff;} or const name = function(){stuff;}</li>
+      <li>Don't declare functions with Function()</li>
+      <li>to invoke a function - name();</li>
+      <li>parameter is a value set when the funtion is defined (placeholder), argument is defined when function is invoked (value for placeholder)</li>
+      <li>arguments() is a special variable of function that is an arraylike variable for an unkown amount of values</li>
+      <li>rest(...args) works better for this</li>
+      <li>can put (...args) with our mean function as well - function mean(...values) {let total = 0; for(const value of values) { total += value;} return total/values.length;}</li>
+      <li>Default parameters are assigned to the function and are used if no other argument is given</li>
+      <li>Arrow functions (easier to write), parameter before arrow, main body after - const square = x => x*x;</li>
+      <li>in arrow functions sinlge parameters don't need paranthesis but multiples do ie. (x,y)</li>
+      <li>if no parameters, use empty braces () before the arrow</li>
+      <li>longer functions require curly braces after the arrow</li>
+      <li>Hoisting is the act of moving all variable and function declarations to the top of the current scope, which means they can be invoked before they have been defined</li>
+      <li>Callback allows a function to take another function as a parameter</li>
+      <li>forEach() is a good way to loop through arrays, also map() but map() keeps it in an array</li>
+      <li>reduce() iterates through the array and combines them to produce a single value, use callback to describe how the values combine</li>
+      <li>filter() can be used in conjuction with a function to filter an entire array to what is needed</li>
+    </ol>
+
+
+  </main>
+  <footer>
+    
+  </footer>
+</body>
+</html>
