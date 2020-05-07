@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Week 3 Notes</title>
+  <meta name="description" content="This is Week 3 Notes of Jon's Portfolio for WDD330">
+</head>
+<body>
+  <header>
+    <h1>Jonathan R. Trowbridge - WDD 330 Portfolio</h1>
+  </header>
+  <nav>
+
+  </nav>
+  <main>
+    <h2>Week 3 Notes</h2>
+    <h3>Chapter 5:</h3>
+    <ol>
+        <li>Functions within an object is called a method</li>
+        <li>Object literals wrap its methods and properties in curly braces</li>
+        <li>If a property's name doesn't follow the rules for naming, then it needs quoted</li>
+        <li>create object - const spiderman = {}</li>
+        <li>accessing properties can be done with dot notation and bracket notation</li>
+        <li>calling a method requires parenthesis at the end</li>
+        <li>checking if properties or methods exist: 'city' in superman, superman.city !== undefined, superman.hasOwnPropert('city')</li>
+        <li>finding all propertied in object... do a for/in loop</li>
+        <li>add properties superman.city = 'Metropolis';</li>
+        <li>to change a property just assign the key with a different value</li>
+        <li>to remove property - delete superman.fly</li>
+        <li>objects can contain other objects</li>
+        <li>objects can be used as parameters of functions</li>
+        <li>this - refers to the object it is in</li>
+        <li>objects can be used to creat namespaces, which holds functions in order to not reuse names</li>
+        <li>JSON is a string representation of the object literal notation</li>
+        <li>use parse() method to convert JSON to JavaScript, stringify() to do opposite</li>
+        <li>methods/functions cannot be in JSON</li>
+        <li>Math Object properties: .PI, .SQRT2, .SQRT1_2, .E, .LN2, .LN10, .LOG2E, .LOG10E</li>
+        <li>Math Object methods: .abs(), .ceil(), .floor(), .round(), .trunc() 'Integer part of decimal', .exp(), .sqrt(), .pow(), .cbrt(), .hypot(), .log(), .log2(), .log10(), .max(), .min(), sin(), .cos(), .tan(), .asin(), .acos(), .atan(), .sinh(), .cosh(), .tanh(), .random()</li>
+        <li>if argument is not supplied, date object will default to current date and time</li>
+        <li>date parameters: year, month, day, hour, minutes, seconds, milliseconds</li>
+        <li>Epoch is 1st January 1970, arbitrary date</li>
+        <li>Date Object getter methods: .getDay(), .getUTCDay(), . getDate(), .getUTCDate(), .getMonth(), .getUTCMonth(), .getYear() "borken after 2000", .getFullYear(), .getUTCFullYear(), .getHours(), .getUTCHours(), .getMinutes(), .getUTCMinutes(), .getSeconds(), .getUTCSeconds(), .getMilliseconds(), .getUTCMilliseconds(), .getTime(), .getTimezoneOffset()</li>
+        <li>You can also do most of these with setter methods, just change the .get to .set</li>
+        <li>A regular expression (or RegExp, for short) is a pattern that can be used to search strings for matches to the pattern. A common use is 'find and replace' type operations.</li>
+        <li>RegExp methods .test() "provides true false", .exec() "provides null if no matches"</li>
+        <li>Character groups show what any one of the variables represent, these are placed inside square brackets, a ^ represents what it can't be</li>
+        <li>RegExp properties - global(g for true): makes the pattern return all matches, ignoreCase(i for true): makes the pattern case-insensitive, multiline(m for true): makes the pattern multiline</li>
+        <li>String methods: split(), match(), search(), replace()</li>
+    </ol>
+
+    <h3>Chapter 6</h3>
+    <ol>
+      <li>DOM - Document Object Model: represents an HTML document as a network of connected nodes that form a tree-like structure.</li>
+      <li>DOM treats everything as a node</li>
+      <li>DOM is language agnostic: can be used in any programming language</li>
+      <li>elements can be assigned a variable and be inspected or modified</li>
+      <li>numeric nodes(.nodeType): 1-element, 2-attribute, 3-text, 8-comment, 9-body</li>
+      <li>Legacy shortcut methods: Document.body, Document.images, Document.links, Document.anchors, Document.forms</li>
+      <li>getElementById(), getElementByTagName(), getElementByClassName</li>
+      <li>Document.querySelector(): allows you to use CSS notation to find thefirstelement in the document that matches a CSS selector provided as an argument.</li>
+      <li>Document.querySelectorAll(): also uses CSS notation but returns a node list ofallthe elements in the document that match the CSS query selector.</li>
+      <li>childNodes: list of all the nodes that are children of the node concerned.</li>
+      <li>children: only returns anyelementnodes that are children of that node, so will ignore any text nodes</li>
+      <li>firstChild: returns the first child of a node, lastChild: returns the last child of a node</li>
+      <li>parentNode: returns the parent node of an element.</li>
+      <li>nextSibling and previous sibling: returns the next and previous adjacent node of the same parent respectively</li>
+      <li>nodeValue, textContent & innerText</li>
+      <li>getAttribute(): returns the value of the attribute provided as an argument</li>
+      <li>setAttribute: can change the value of an element’s attributes</li>
+      <li>setAttribute takes two arguments: the attribute that you wish to change, and the new value of that attribute.</li>
+      <li>.className: allows the class of an element to be set directly.</li>
+      <li>.classList: .add, .remove, .toggle, .contains</li>
+      <li>.createElement(): takes a tag name as a parameter and returns that element.</li>
+      <li>.createTextNode(): takes a parameter, which is a string containing the text that goes in the node.</li>
+      <li>.appendChild(): will add another node (given as an argument) as a child node</li>
+      <li>.insertBefore(): will place a new element before another element in the markup. It’s important to note that this method is called on theparent node. It takes two parameters: the first is the new node to be added, and the second is the node that you want it to go before</li>
+      <li>.removeChild(): the parent node and has a single parameter, which is the node to be removed.</li>
+      <li>.replaceChild(): can be used to replace one node with another. It’s called on the parent node and has two parameters: the new node and the node that is to be replaced.</li>
+      <li>.innerHTML:  It returns all the child elements of an element as a string of HTML.</li>
+      <li>Any CSS property names that are separated by dashes must be written in camelCase notation, so the dash is removed and the next letter is capitalized because dashes are not legal characters in property names.</li>
+    </ol>
+
+    <h3>Chapter 7</h3>
+    <ol>
+      <li>Event Listener: like an alert if something happens</li>
+      <li>The original way of dealing with events in the browser was to use inline attributes that were added directly into the markup.</li>
+      <li> addEventListener() method is called on a node object, the node to which the event listener is being applied.</li>
+      <li>type property is used to tell us that the type of event logged</li>
+      <li>target property returns a reference to the node that fired the event.</li>
+      <li>There are also the mousedown and mouseup events. These both occurbeforea click event is fired.</li>
+      <li>click, dblclick, & mouseover events</li>
+      <li>Three events that occur when a user presses a key are: keydown , keypress and keyup . When a user presses a key, the events occur in that order. They are not tied to any particular key, although the information about which key was pressed is a property of the event object.</li>
+      <li>The name of the modifier key is still returned by the key property. </li>
+      <li>touchend, touchmove, touchenter, touchleave, touchcancel</li>
+      <li>removeEventListener() method does just what it says</li>
+      <li> preventDefault() is a method of the event object that can be used inside the callback function to stop the default behavior happening.</li>
+      <li>The bubble phase can be stopped from occurring by adding the event.stopPropagation() method into the callback function.</li>
+      <li>Event delegation can be used to attach an event listener to a parent element in order to capture events that are triggered by its child elements.</li>
+    </ol>
+
+
+  </main>
+  <footer>
+    
+  </footer>
+</body>
+</html>
