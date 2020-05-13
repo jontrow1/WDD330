@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Week 4 Notes</title>
+  <meta name="description" content="This is Week 4 Notes of Jon's Portfolio for WDD330">
+</head>
+<body>
+  <header>
+    <h1>Jonathan R. Trowbridge - WDD 330 Portfolio</h1>
+  </header>
+  <nav>
+
+  </nav>
+  <main>
+    <h2>Week 4 Notes</h2>
+    <h3>Chapter 8:</h3>
+    <ol>
+        <li>Forms are made up of a <form> element that contains form controls such as input fields, select menus and buttons.</li>
+        <li>document.forms: returns an HTML collection of all the forms in the document in the order they appear in the markup.</li>
+        <li>const form = document.forms[0] is equivalent to const form = document.getElementsByTagname('form')[0]</li>
+        <li>A form object also has a method called elements that returns an HTML collection of all the elements contained in the form.</li>
+        <li>The form.submit() method will submit the form automatically. </li>
+        <li>The form.reset() method will reset all the form controls back to their initial values specified in the HTML.</li>
+        <li>The form.action property can be used to set the action attribute of a form</li>
+        <li>The focus event occurs when an element is focused on.</li>
+        <li>The blur event occurs when the user moves the focus away from the form element.</li>
+        <li>The change event occurs when the user moves the focus away from the form elementafter changing it</li>
+        <li>submit event, occurring when the form is submitted.</li>
+        <li>Text input element objects have a value property that can be used to retrieve the text inside the field.</li>
+        <li>Form Controls: input, select, textarea, button</li>
+        <li>Input Fields: text input, password inputcheckbox, radio buttons, hidden input, file input, etc.</li>
+        <li>Form validation is the process of checking whether a user has entered the information into a form correctly.</li>
+        <li>A submit button can be disable by added the disabled attribute to the <input> element</li>
+    </ol>
+
+    <h3>Chapter 12</h3>
+    <ol>
+      <li>Object-oriented programming (OOP for short) is a style of programming that involves separating the code into objects that have properties and methods.</li>
+      <li>There are three main concepts in OOP: encapsulation, polymorphism and inheritance.</li>
+      <li>encapsulation: the inner workings are kept hidden inside the object and only the essential functionalities are exposed to the end user, such as the 'on' button.</li>
+      <li>polymorphism: the same process can be used for different objects.</li>
+      <li>inheritance: taking the features of one object then adding some new features.</li>
+      <li>JavaScript didn't have classes before ES6, and used the concept of using actual objects as the blueprint for creating more objects. This is known as aprototype-basedlanguage.</li>
+      <li>The keyword this is used to represent the object that will be returned by the constructor function.</li>
+      <li>ES6 introduced the newclass declarationsyntax that does exactly the same thing as a constructor function, but looks much similar to writing a class in a class-based programming language.</li>
+      <li>All objects have a constructor property that returns the constructor function that created it</li>
+      <li>The static keyword can be used in class declarations to create a static method.</li>
+      <li>JavaScript uses a prototypal inheritance model. This means that every class has a prototype property that is shared by every instance of the class.</li>
+      <li>The prototype object is live, so if a new property or method is added to the prototype, any instances of its class will inherit the new properties and methods automatically, even if that instance has already been created.</li>
+      <li>An object instance can overwrite any properties or methods inherited from its prototype by simply assigning a new value to them.</li>
+      <li>The prototype can be used to add any new properties and methods after the class has been declared. It should be used to define any properties that will remain the same for every instance of the class.</li>
+      <li>A class can inherit from another class using the extends keyword in a class declaration.</li>
+      <li>The concept of polymorphism means that different objects can have the same method, but implement it in different ways.</li>
+      <li>It is possible to add more methods to the prototype of JavaScript’s built-in objects — such as Number , String , and Array — to add more functionality. This practice is known asmonkey-patching, but it’s mostly frowned upon in the JavaScript community, despite it being an incredibly powerful technique</li>
+      <li>An object property descriptor can have get() and set() methods instead of a value attribute. All objects must have one or the other, they can't have both.</li>
+      <li>The Object() constructor function has a method called create that can be used to create a new object that is an exact copy of the object that is provided as an argument.</li>
+      <li>Creating objects from objects will create a prototype chain.</li>
+      <li>A mixin is a way of adding properties and methods of some objects to another object without using inheritance.</li>
+      <li>One use for the mixin() function is to add a large number of properties to an object all at once.</li>
+      <li>Another use of the mixin() function is to create a copy() method that can be used to make an exact, deep copy of an object</li>
+      <li>A factory function is a function that can be used to return an object.</li>
+    </ol>
+
+    <h3>Chapter 15</h3>
+    <ol>
+      <li>A module is a self-contained piece of code that provides functions and methods that can then be used in other files and by other modules.</li>
+      <li>The code in a module should have a single purpose, and group together functions with distinct functionality.</li>
+      <li>A ES6 module file is just a normal JavaScript file, but uses the keyword export to specify any values or functions that are to be made available from the module.</li>
+      <li>Default exportsrefer toa singlevariable, function or class in a module that can be imported without having to be explicitly named.</li>
+      <li>A Common JS module is created in a separate file, and the module.exports method is used to make any functions available to other files, in a similar way to ES6 modules.</li>
+      <li>To use the module, it needs to then be required inside the another JS file (or from within the Node REPL). This is done using the require() method.</li>
+    </ol>
+
+
+  </main>
+  <footer>
+    
+  </footer>
+</body>
+</html>
