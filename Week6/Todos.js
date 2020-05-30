@@ -41,6 +41,7 @@ function newTodo() {
     const todoDiv = createTodoElement(todo);
     addToList(todoDiv);
     ls.saveTodo(todo);
+    countRemaining();
 }
 
 function createTodo() {
