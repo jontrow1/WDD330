@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>To Do List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="style.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <main>
+      <h1>Todos</h1>
+      <ul id="tasks" class="taskStyles"></ul>
+      <div id="filterDiv"><span id="count">tasks left</span>
+        <a class="filterlink" id="all" href="#">All</a>
+        <a class="filterlink" id="active" href="#">Active</a>
+        <a class="filterlink" id="complete" href="#">Completed</a>
+      </div>
+      <div id="taskDiv">
+        <input type="text" id="newTask" placeholder="Task...">
+        <button id="addTask">+</button>
+      </div>
+    </main>
+
+    <script src="main.js" type="module"></script>
+  </body>
+</html>

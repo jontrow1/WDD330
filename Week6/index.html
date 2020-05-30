@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>ToDo List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: auto;
+            font-size: 14px;
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            
+        }
+
+        .todo {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            border-top: solid 1px black;
+            border-right: solid 1px black;
+            border-left: solid 1px black;
+            padding: 10px;
+            box-sizing: border;
+        }
+
+        .todo button {
+            width: 25px;
+            height: 25px;
+            border: solid 1px black;
+            border-radius: 2px;
+        }
+
+        .todo-delete-btn {
+            background-color: lightgrey;
+            color: red;
+        }
+
+        .todo-content {
+            padding: 10px 20px;
+            width: calc(100% - 50px);
+        }
+
+        @media (ma-width: 500px) {
+            .add-todo-wrapper {
+                position: absolute;
+                bottom: 10px;
+            }
+        }
+
+        #filterDiv {
+            width: 401px;
+	        margin-top: -1px;
+	        display: grid;
+	        border-top: 1px solid black;
+	        padding: 7px 10px;
+	        grid-template-columns: auto auto auto auto;
+	        font-size: small;
+            margin-bottom: 25px;
+        }
+
+        .filterlink {
+            text-decoration: none;
+            color: black;
+            text-align: center;
+        }
+
+        .filterlink:active, .filterlink:hover {
+            border: solid 1px black;
+        }
+
+        .add-todo-wrapper {
+            text-align:center;
+            display: grid;
+            width: 422px;
+            grid-template-columns: 80% 20%;
+        }
+
+        #todoInput {
+            margin-right: 5%;
+        }
+
+    </style>
+    <script src="Todos.js" type="module"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Todos</h1>
+      <div class="todos-wrapper">
+          <div id="todos">
+
+          </div>
+          <div class="todo-filters">
+            <div id="filterDiv"><span id="count"></span>
+                <a class="filterlink" id="all" href="#">All</a>
+                <a class="filterlink" id="active" href="#">Active</a>
+                <a class="filterlink" id="complete" href="#">Completed</a>
+            </div>
+          </div>
+      </div>
+      <div class="add-todo-wrapper">
+          <input id="todoInput" type="text">
+          <button id="addBtn">Add</button>
+      </div>
+    </div>   
+  </body>
+</html>
