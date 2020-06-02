@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Week 7 Notes</title>
+  <meta name="description" content="This is Week 7 Notes of Jon's Portfolio for WDD330">
+</head>
+<body>
+  <header>
+    <h1>Jonathan R. Trowbridge - WDD 330 Portfolio</h1>
+  </header>
+  <nav>
+
+  </nav>
+  <main>
+    <h2>Week 7 Notes</h2>
+    <h3>Chapter 11:</h3>
+    <ol>
+        <li>All functions have a length property which calls the number of parameters it has: functionName.length</li>
+        <li>The call() method sets the value '.this' to an object that is provided as the first argument</li>
+        <li>The apply() method warks the same as the call() method, except the arguments are provided as an array</li>
+        <li>'.description' can be added to describe what the function does.</li>
+        <li>AnImmediately Invoked Function Expression– or IIFE – (pronounced 'iffy') is an anonymous function that, as the name suggests, is invoked as soon as it’s defined. This is easily achieved by placing parentheses at the end of the function definition (remember we use parentheses to invoke a function). The function also has to be made into an expression, which is done by placing the whole declaration inside parentheses</li>
+        <li>Placing a variable within an IIFE will make it temporary</li>
+        <li>Recommended way to use strict mode: (function() {
+          'use strict';
+      // All your code would go inside this function
+      })();</li>
+        <li>An IIFE can be used to enclose a block of code inside its own private scope so it doesn’t interfere with any other part of the program.</li>
+        <li>The dynamic nature of JavaScript means that a function is able to not only call itself, but define itself, and even redefine itself. This is done by assigning an anonymous function to a variable that hasthe same name as the function.</li>
+        <li>A recursive function is one that invokes itself until a certain condition is met. </li>
+        <li>The Collatz Conjecture states that every positive integer will create a sequence that finishes in this loop. </li>
+        <li>When the wait() function is invoked, any code inside it is run, so the message 'This tape will self destruct in five seconds ... ' is displayed. The setTimeout() function is asynchronous, which means that the callback provided as an argument is placed on top of a stack that gets cleared once the rest of the program has run. This means that control is handed back to the program and the next line in the program is run, which displays the message ‘Hmmm, should I accept this mission or not ... ?’ Then, after five seconds, the callback is retrieved from the stack and invoked. </li>
+        <li>Callback hell is the term used to refer to this tangled mess of code, and it's such a common issue that it evenhas its own website!</li>
+        <li>Apromiserepresents the future result of an asynchronous operation. </li>
+        <li>A promise is created using a constructor function. This takes a function called anexecutoras an argument. The executor initializes the promise and starts the asynchronous operation. It also accepts two functions as arguments: the resolve() function is called if the operation is successful, and the reject() function is called if the operation fails. </li>
+        <li>Once a promise has been settled, the then() method can be used to deal with the outcome. This method accepts two arguments. The first is afulfilment functionthat’s called when the promise is resolved. Any data returned from the resolve() function will be passed along to this function. The second argument is a rejection function that’s called if the promise is rejected. </li>
+        <li>These functions are preceded by the async keyword and allow you to write asynchronous code as if it was synchronous. This is achieved by using the await operator before an asynchronous function. </li>
+        <li>We've just seen that functions can accept another function as an argument (a callback), but they can also return a function.</li>
+        <li>A closure is a reference to a variable that was created inside the scope of another function, but is then kept alive and used in another part of the program.</li>
+        <li>functions declared from within another function have access to any variables declared in the outer function’s scope.</li>
+        <li>Aclosureis formed when the inner function is returned by the outer function, maintaining access to any variables declared inside the enclosing function.</li>
+        <li>To define a generator function, an asterisk symbol ( * ) is placed after the function declaration</li>
+        <li>A pure function is a function that adheres to the following rules:
+
+          1) The return value of a pure function should only depend on the values provided as arguments. It doesn't rely on values from somewhere else in the program.
+          
+          2) There are no side-effects. A pure function doesn't change any values or data elsewhere in the program. It only makes non-destructive data transformations and returns new values, rather than altering any of the underlying data.
+          
+          3) Referential transparency. Given the same arguments, a pure function will always return the same result.</li>
+        <li>Higher-order functions are functions that accept another function as an argument, or return another function as a result, or both.</li>
+        <li>A function is said to be curried when not all arguments have been supplied to the function, so it returns another function that retains the arguments already provided, and expects the remaining arguments that were omitted when the original function was called. </li>
+    </ol>
+    
+    <h3>Chapter 13:</h3>
+    <ol>
+        <li>Ajax allows JavaScript to request resources from a server on behalf of the client. The resources requested are usually JSON data or small fragments of text or HTML rather than a whole web page.</li>
+        <li>Fetch API, which is currently a living standard for requesting and sending data asynchronously across a network. The Fetch API uses promises to avoid callback hell, and also streamlines a number of concepts that had become cumbersome when using the XMLHttpRequest object.</li>
+        <li>The Fetch API provides a global fetch() method that only has one mandatory argument, which is the URL of the resource you wish to fetch.</li>
+        <li>The redirect() method can be used to redirect to another URL. </li>
+        <li>The text() method takes a stream of text from the response, reads it to completion and then returns a promise that resolves to a USVSting object that can be treated as a string in JavaScript.</li>
+        <li>The blob() method is used to read a file of raw data, such as an image or a spreadsheet. </li>
+        <li>The json() method is used to deal with these by transforming a stream of JSON data into a promise that resolves to a JavaScript object.</li>
+        <li>HTTPheadersare used to pass on any additional information about a request or response. </li>
+        <li>has() – Can be used to check if the headers object contains the header provided as an argument.</li>
+        <li>get() - Returns the value of the header provided as an argument</li>
+        <li>set() – Can be used to set a value of an already existing header, or create a new header with the value provided as an argument if it does not already exist.</li>
+        <li>append() – Adds a new header to the headers object.</li>
+        <li>delete() – Removes the header provided as an argument.</li>
+        <li>keys() , values() and entries() – Iterators that can be used to iterate over the headers key, values or entries (key and value pairs).</li>
+        <li>We can also use Ajax to send information. This can be a variety of formats, but is usually a JSON string.</li>
+        <li>The Fetch API includes the FormData interface, which makes it much easier to submit information in forms using Ajax.</li>
+        
+    </ol>
+  </main>
+  <footer>
+    
+  </footer>
+</body>
+</html>
