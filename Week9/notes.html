@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Week 9 Notes</title>
+  <meta name="description" content="This is Week 9 Notes of Jon's Portfolio for WDD330">
+</head>
+<body>
+  <header>
+    <h1>Jonathan R. Trowbridge - WDD 330 Portfolio</h1>
+  </header>
+  <nav>
+
+  </nav>
+  <main>
+    <h2>Week 9 Notes</h2>
+    <h3>Chapter 9:</h3>
+    <ol>
+      <li>The Browser Object Model (or BOM for short) is a collection of properties and methods that contain information about the browser and computer screen.</li>
+      <li>ny global variable created is actually a property of the window object</li>
+      <li>The window.alert() method will pause the execution of the program and display a message in a dialog box. </li>
+      <li>The window.confirm() method will stop the execution of the program and display a confirmation dialog that shows the message provided as an argument, and giving the options of OK or Cancel.</li>
+      <li>The window.prompt() method will stop the execution of the program. It displays a dialog that shows a message provided as an argument, as well as an input field that allows the user to enter text.</li>
+      <li>The Navigator object contains information about the browser being used. Its userAgent property will return information about the browser and operating system being used.</li>
+      <li>The window.location property is an object that contains information about the URL of the current page.</li>
+      <li>The href property returns the full URL as a string, The protocol property returns a string describing the protocol used (such as http , https , pop2 , ftp etc.), The host property returns a string describing the domain of the current URLandthe port number, he hostname property returns a string describing the domain of the current URL, The port property returns a string describing the port number, although it will return an empty string if the port is not explicitly stated in the URL, The pathname property returns a string of the path that follows the domain</li>
+      <li>The search property returns a string that starts with a “?” followed by the query string parameters, The hash property returns a string that starts with a “#” followed by the fragment identifier, The origin property returns a string that shows the protocol and domain where the current page originated from</li>
+      <li>The window.location object also has the following methods:
+
+        The reload() method can be used to force a reload of the current page. If it’s given a parameter of true , it will force the browser to reload the page from the server, instead of using a cached page.
+        
+        The assign() method can be used to load another resource from a URL provided as a parameter, for example:
+        
+        The replace() method is almost the same as the assign() method, except the current page will not be stored in the session history, so the user will be unable to navigate back to it using the back button.
+        
+        The toString() method returns a string containing the whole URL</li>
+      <li>The window.history property can be used to access information about any previously visited pages in the current browser session.</li>
+      <li>The window.history.length property shows how many pages have been visited before arriving at the current page.
+
+        The window.history.go() method can be used to go to a specific page, where 0 is the current page, There are also the window.history.forward() and window.history.back() methods that can be used to navigate forwards and backwards by one page respectively</li>
+      <li>A new window can be opened using the window.open() method, The close() method can be used to close a window</li>
+      <li>It is also possible to move a window using the window.moveTo() method. This takes two parameters that are the X and Y coordinates of the screen that the window is to be moved to</li>
+      <li>You can resize a window using the window.resizeTo() method. This takes two parameters that specify the width and height of the resized window’s dimensions</li>
+      <li>The window.screen object contains information about the screen the browser is displayed on. You can find out the height and width of the screen in pixels using the height and width properties respectively</li>
+      <li>The availHeight and availWidth can be used to find the height and width of the screen, excluding any operating system menus, The colorDepth property can be used to find the color bit depth of the user’s monitor</li>
+      <li>Each window object contains a document object. This object has properties and methods that deal with the page that has been loaded into the window.</li>
+      <li>The write() method simply writes a string of text to the page</li>
+      <li>The document.write() method can also be used within a document inside script tags to inject a string into the markup</li>
+      <li>To create a cookie, you assign it to JavaScript’s “cookie jar”, using the document.cookie property</li>
+      <li>A cookie’s value can be changed by reassigning it to document.cookie using the same name but a different value</li>
+      <li>To see the current contents of the cookie jar, simply enter document.cookie</li>
+      <li>Adding the string ; secure to the end of a cookie will ensure it’s only transmitted over a secure HTTPS network</li>
+      <li>The window.setTimeout() method accepts a callback to a function as its first parameter and a number of milliseconds as its second parameter.</li>
+      <li>It can also cancel the timeout using the window.clearTimeout() method</li>
+      <li>The window.setInterval() method works in a similar way to window.setTimeout() , except that it will repeatedly invoke the callback function after every given number of milliseconds</li>
+    </ol>
+    
+    <h3>Chapter 14:</h3>
+    <ol>
+      <li>The data- attribute is a way of embedding data in a web page using custom attributes that are ignored by the browser</li>
+      <li>The Web Storage API provides a key-value store on the client’s computer that is similar to using cookies but has fewer restrictions, more storage capacity, and is generally easier to use</li>
+      <li>To remove an entry from local storage, use the removeItem method</li>
+      <li>Alternatively, this can be done using the delete operator</li>
+      <li>To completely remove everything stored in local storage, use the clear() method</li>
+      <li>The Geolocation API is used to obtain the geographical position of the device</li>
+      <li>The position object passed to the youAreHere() function has a coords property with a latitude and longitude property, which together give the coordinates of the device</li>
+      <li>position.speed property returns the ground speed of the device in meters per second.
+
+        position.altitude property returns an estimate of the device’s altitude in meters above theWGS84ellipsoid, which is a standard measurement for the center of the Earth.
+       
+        position.heading property returns the direction the device is moving in. This is measured as a bearing in degrees, clockwise from North.
+       
+        position.timestamp property returns the time that the position information was recorded.</li>
+      <li>the geolocation object has a watchPosition() method that will call a callback function every time the position of the device is updated</li>
+      <li>The clearWatch() method can be used to stop the callback being called, using the ID of the watch as an argument</li>
+      <li>Websocket is a new protocol that allows two-way communication with a server – also known as push messaging</li>
+      <li>The Notification API allows you to show messages using the system's notifications.</li>
+      <li>HTML5 introduced the <audio> and <video> tags used to insert audio and video clips into a web page. It also introduced a Media API for controlling the playback of the clips using JavaScript.</li>
+      <li>The play() method will start the clip playing from its current position:
+        The pause() method will pause the clip at its current position:
+        The volume property is a number that can be used to set the audio volume:
+        The muted property is a boolean value that can be used to mute the audio:
+        The currentTime property is a number value that can be used to jump to another part of the clip:
+        The playbackRate property is used to fast-forward or rewind the clip by changing its value. A value of 1 is playback at normal speed:
+        The loop property is a boolean value that can be set to true to make the clip repeat in a loop:
+        The duration property can be used to see how long the clip lasts</li>
+      <li>The list of APIs is constantly growing, and includes APIs for accessing a device’s camera, uploading files, accessing the battery status, handling push notifications, building drag-and-drop functionality, creating 3D effects with WebGL, and many more!</li>
+      <li>The canvas element was introduced to allow graphics to be drawn onto a web page in real time using JavaScript.</li>
+    </ol>
+  </main>
+  <footer>
+    
+  </footer>
+</body>
+</html>

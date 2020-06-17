@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>API Activity</title>
+  <meta name="description" content="Team activity week 8">
+  <style>
+      body {
+          background-color: red;
+          color: white;
+      }
+
+      button {
+          background-color: green;
+          width: 200px;
+      }
+
+      h1 {
+          color: yellow;
+      }
+
+  </style>
+</head>
+<body>
+  <main>
+      <h1>Gotta Catch 'em All</h1>
+      <button id="greenBtn" onclick="getPokemon('https://pokeapi.co/api/v2/pokemon')">Get Pokemon!</button>
+      <div id="pokeContainer"></div>
+      
+  </main>
+  <script>
+      const btn = document.querySelector("#greenBtn");
+      async function getPokemon(url) {
+        try {
+            const response = await fetch(url);
+            if(!response.ok) {
+                throw Error.responseText;
+            } else {
+                const fetchJson = await response.json()
+                console.log(fetchJson)
+                renderPokemon(fetchJson)
+            }
+        } catch(error) {
+            console.log(error)
+        }
+      }
+
+      function renderPokemon(data) {
+          const pokemonContainer = document.querySelector("#pokeContainer")
+
+          if(data.next) {
+            btn.textContent = "Show More"
+            btn.setAttribute("onclick", `getPokemon('${data.next}')`)
+          }
+          data.results.forEach( pokemon => {
+            const pokeList = document.createElement("li")
+            pokeList.innerHTML = 
+            `
+            <span class="pokeItem">${pokemon.name}</span> <button class="viewBtn" onclick="getDetails('${pokemon.name}', '${pokemon.url}')">View Details</button>
+            `
+            pokeList.id = pokemon.name
+            pokemonContainer.appendChild(pokeList);
+          })
+      }
+
+      function getDetails(id, url) {
+          fetch(url)
+          .then( res => res.json() )
+          .then( data => {
+            let li = document.getElementById('id')
+            let div = document.createElement('div')
+            div.innerHTML = 
+            `
+                <img src="${data.sprites.front_default}"/>
+            `
+            li.appendChild(div)
+          })
+      }
+
+
+  </script>
+</body>
+</html>
