@@ -8,10 +8,13 @@
 </head>
 
 <body>
-    <input id="thisInput1" type="number">
-    <input id="thisInput2" type="number">
-    <button type="button" onclick="addButton()">+</button>
-    <div id="thisBox"></div>
+    <input id="inputNum1" placeholder="Enter a number" type="number"/>
+    <input id="inputNum2" placeholder="Enter a number" type="number"/>
+    
+    <button id="AddBtn" onclick="calculate(add)">+</button>
+    <button id="SubtractBtn" onclick="calculate(sub)">-</button>
+    <button id="MultiplyBtn" onclick="calculate(mult)">*</button>
+    <div id="answer"></div>
 <script src='team.js'></script>
 </body>
 </html>

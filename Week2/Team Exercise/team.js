@@ -1,24 +1,32 @@
-/*function insertInput() {
-    const text = document.getElementById('thisInput').value;
-    const num = parseInt(text);
-    if (num !== NaN) {
-        document.getElementById('thisBox').innerHTML = sumNum(num);
-    }
+function getNum(numId) {
+    const number = document.getElementById(numId).value;
+    const numberFloat = parseFloat(number);
+    if (numberFloat !== NaN) {
+      return numberFloat;
+    } else return 0;
 }
 
-function sumNum(number) {
-    let total = 0;
-    for (let i = 1; i <= number; i++) {
-        total += i;
-    }
-    return total;
-}*/
+function updateTotal(value) {
+    const outputElement = document.getElementById('answer');
+    outputElement.innerHTML = 'Total: ' + value;
+}
 
-function addButton() {
-    const num1 = parseFloat(document.getElementById('thisInput1').value);
-    const num2 = parseFloat(document.getElementById('thisInput2').value);
-    if ((num1 !== NaN) & (num2 !== NaN)) {
-        const total = num1 + num2;
-        document.getElementById('thisBox').innerHTML = total;
-    }
+function add(num1, num2) {
+    return num1 + num2;
+}
+
+function sub(num1, num2) {
+    return num1 - num2;
+}
+
+function mult(num1, num2) {
+    return num1 * num2;
+}
+
+function calculate(operation) {
+    const total = operation(
+      getNum('inputNum1'),
+      getNum('inputNum2')
+    );
+    updateTotal(total);
 }
