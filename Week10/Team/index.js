@@ -1,8 +1,4 @@
-import QuakesController from './QuakesController.js';
-import buildNavigation from './routing.js';
-
-const navElement = document.getElementById('mainNav');
-buildNavigation(navElement);
-
+import QuakesController from './quakesController.js';
+​
 const myQuakesController = new QuakesController('#quakeList');
-myQuakesController.getQuakesByRadius();
+myQuakesController.init();

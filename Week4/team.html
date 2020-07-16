@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tic Tac Toe</title>
+    <style>
+        .divBoard {
+            display: grid;
+            grid-template-columns: 100px 100px 100px;
+            grid-template-rows: 100px 100px 100px;
+            justify-content: center;
+        }
+        .divBoard > div {
+            border: 1px solid;
+            font-size: 5em;
+            text-align: center;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="divBoard">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <button id="reset">Reset</button>
+
+    <script>
+      const divBoard = document.querySelector('.divBoard');
+      const resetButton = document.getElementById('reset');
+      const player1 = 'X';
+      const player2 = 'O';
+      let player = player1;
+      function addPiece(e) {
+        console.log(e.target);
+        e.target.innerHTML = player;
+        if (player === player1) player = player2;
+        else player = player1;
+      }
+
+      function resetBoardDiv() {
+        const divBoard = document.querySelector('.divBoard');
+        for (let i = 0; i < divBoard.children.length; i++) {
+          divBoard.children[i].innerText = '';
+        }
+        const children = Array.from(divBoard.children);
+        const empty = children.filter(function(child) {
+          return child.innerText == 'X' || child.innerText == 'O';
+        });
+        console.log(empty);
+      }
+      divBoard.addEventListener('click', addPiece);
+      reset.addEventListener('click', resetBoardDiv);
+    </script>
+  </body>
+</html>

@@ -22,34 +22,34 @@
         <div class="dice-container">
           <div class="dice-box">
             <img class="dice d4" src="images/d4.svg" alt="d4 image">
-            <input type="number" size="10" id="d4-count" name="mynumber" value="0" />
+            <input class="diceInput" type="number" size="10" id="d4" name="mynumber" value="0" />
           </div>
           <div class="dice-box">
             <img class="dice d6" src="images/d6.svg" alt="d6 image">
-            <input type="number" size="10" id="d6-count" name="mynumber" value="0" />
+            <input class="diceInput" type="number" size="10" id="d6" name="mynumber" value="0" />
           </div>
           <div class="dice-box">
             <img class="dice d8" src="images/d8.svg" alt="d8 image">
-            <input type="number" size="10" id="d8-count" name="mynumber" value="0" />
+            <input class="diceInput" type="number" size="10" id="d8" name="mynumber" value="0" />
           </div>
           <div class="dice-box">
             <img class="dice d10" src="images/d10.svg" alt="d10 image">
-            <input type="number" size="10" id="d10-count" name="mynumber" value="0" />
+            <input class="diceInput" type="number" size="10" id="d10" name="mynumber" value="0" />
           </div>
           <div class="dice-box">
             <img class="dice d12" src="images/d12.svg" alt="d12 image">
-            <input type="number" size="10" id="d12-count" name="mynumber" value="0" />
+            <input class="diceInput" type="number" size="10" id="d12" name="mynumber" value="0" />
           </div>
           <div class="dice-box">
             <img class="dice d20" src="images/d20.svg" alt="d20 image">
-            <input type="number" size="10" id="d20-count" name="mynumber" value="0" />
+            <input class="diceInput" type="number" size="10" id="d20" name="mynumber" value="0" />
           </div>
           <div class="dice-box d100-box">
             <div class="d100-block">
               <img class="dice d100" id="d100-1" src="images/d10.svg" alt="d10 image-1">
               <img class="dice d100" id="d100-2" src="images/d10.svg" alt="d10 image-2">
             </div>
-            <input type="number" size="10" id="d100-count" name="mynumber" value="0" />
+            <input class="diceInput" type="number" size="10" id="d100" name="mynumber" value="0" />
           </div>
         </div>
 
@@ -59,10 +59,10 @@
         </div>
 
         <div class="button">
-          <button id="roll-dice">Roll</button>
+          <button id="roll-dice" class="rollbtn" onclick="rollDice()">Roll</button>
         </div>
 
-        <div id="rolledValue">
+        <div id="rolledValue" class="rolledValue" onclick="toggleRolled()">
           <span id="roll-info"></span>
           <span id="rolled"></span>
         </div>
@@ -70,5 +70,6 @@
       <div id="rollHistory" class="roll-history" onclick="toggleHistory()"></div>
   </main>
   <script src="js/history.js"></script>
+  <script src="js/roll.js"></script>
 </body>
 </html>

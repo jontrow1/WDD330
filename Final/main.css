@@ -22,7 +22,7 @@ main {
     height: 90vh;
 }
 
-#rolledValue {
+.rolledValue {
     display: none;
     border: 1px solid grey;
     text-align: center;
@@ -36,7 +36,7 @@ main {
 }
 
 #rolled {
-    font-size: 14vw;
+    font-size: 175px;
     padding: 5px;
 }
 
@@ -99,7 +99,7 @@ main {
 
 .modifier-container {
     text-align: center;
-    margin-top: -10px;
+    margin-top: 10px;
 }
 
 .modifier-container h3 {
@@ -159,6 +159,17 @@ main {
 .slide {
     width: 100vw;
     right: 8px;
+}
+
+.show {
+    display: block;
+    position: fixed;
+    margin: 0 45px;
+    top: 130px;
+    width: 75%;
+    height: 50%;
+    border: 2px solid black;
+    background-color: rgb(122, 122, 122);
 }
 
 @media only screen and (min-width: 900px) {
@@ -233,5 +244,9 @@ main {
         position: unset;
         width: 100%;
         transition: none;
+    }
+
+    #rolled {
+        font-size: 14vw;
     }
 }
