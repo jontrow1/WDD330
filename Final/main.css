@@ -169,7 +169,46 @@ main {
     width: 75%;
     height: 50%;
     border: 2px solid black;
-    background-color: rgb(122, 122, 122);
+    background-color: rgb(226, 224, 224);
+}
+
+.history-content {
+    padding: 2px 5px;
+    margin-left: 10px;
+}
+
+.history-content:first-child {
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.nat20 {
+    color: green;
+}
+
+.nat1 {
+    color: red;
+}
+
+.clearBtn {
+    display: none;
+    position: absolute;
+    top: 90px;
+    right: 25px;
+    color: rgb(122, 122, 122);
+    z-index: 10;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+}
+
+.seeBtn {
+    display: block;
+}
+
+.seeBtn:hover {
+    color: black;
+    cursor: pointer;
 }
 
 @media only screen and (min-width: 900px) {
@@ -248,5 +287,17 @@ main {
 
     #rolled {
         font-size: 14vw;
+    }
+
+    .clearBtn {
+        display: block;
+        position: absolute;
+        top: 125px;
+        right: 40px;
+        color: rgb(122, 122, 122);
+        z-index: 10;
+        border: none;
+        background: transparent;
+        font-size: 16px;
     }
 }

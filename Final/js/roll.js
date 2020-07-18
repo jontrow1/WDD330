@@ -1,21 +1,17 @@
-/*const diceObjects = {
-    id: Date.now(),
-    dSide: '',
-    dCount: 0,
-    dRoll: 0,
-    modifier: 0,
-    dTotal: 0
-}*/
-
 let diceObjects = []
-//function to loop through diceObjects to add together, add modifier and total
 
+window.addEventListener('load', () => {
+
+  updateHistory();
+});
 
 function rollDice() {
+  removeNaturals();
   whatDice();
   calcTotal();
-    toggleRolled();
-    document.getElementById('rollHistory').innerText = JSON.stringify(diceObjects);
+  toggleRolled();
+  updateHistory();
+  resetForm();
 }
 
 function toggleRolled() {
@@ -29,6 +25,7 @@ function toggleRolled() {
 
 function whatDice() {
   const dice = document.getElementsByClassName('diceInput');
+  const viewport = document.getElementById('rolled');
     
   for (var i = 0; i < dice.length; i++) {
     if (dice[i].value > 0) {
@@ -39,6 +36,12 @@ function whatDice() {
         dRoll: rolledValue(dice[i].id, dice[i].value)
       }
       diceObjects.push(diceObject);
+      if (diceObject.dSide === 'd20' && diceObject.dRoll === 20) {
+        viewport.classList.add('nat20');
+      }
+      if (diceObject.dSide === 'd20' && diceObject.dRoll === 1) {
+        viewport.classList.add('nat1');
+      }
     }
   }
 }
@@ -47,41 +50,90 @@ function rolledValue(id, value) {
   let num = id.slice(1);
   let rollValue = 0;
   for (var i = 1; i <= value; i++) {
-    rollValue += Math.floor(Math.random() * num) + 1;  
+    rollValue += Math.floor(Math.random() * num) + 1; 
   }
   return rollValue;
 }
 
 function calcTotal() {
   let num = 0;
+  let text = '';
   const modifier = document.getElementById('modifier').value;
 
   for (var i = 0; i < diceObjects.length; i++) {
     num += diceObjects[i].dRoll;
+    text = `${diceObjects[i].dCount}${diceObjects[i].dSide}(${diceObjects[i].dRoll}) + ${text}`
   }
 
   let total = num + parseInt(modifier);
-  document.getElementById('roll-info').innerHTML = `${num} + ${modifier} = ${total}`;
+  document.getElementById('roll-info').innerHTML = `${text} ${modifier} = ${total}`;
   document.getElementById('rolled').innerText = total;
 
-  const extraObject = {
-    rollMod: modifier,
-    rollTotal: total
-  }
-  diceObjects.push(extraObject);
+  lsObject(text, modifier, total)
 }
 
+function lsObject(text, mod, total) {
+  const saveObject = {
+    id: Date.now(),
+    rollInfo: text,
+    rollMod: mod,
+    rollTotal: total
+  }
 
-//const mod = document.getElementById('modifier').value;
+  const rollObjList = rollObjectList();
 
-//get the multiplier
+  rollObjList.push(saveObject);
+  localStorage.setItem('rollObject', JSON.stringify(rollObjList));
+}
 
-//create object - half way
+function rollObjectList() {
+  const rollListString = localStorage.getItem('rollObject');
+  let rollList = [];
 
-//show in the rolled screen
+  if (rollListString) {
+      rollList = JSON.parse(rollListString);
+  }
 
-//add to local server
+  return rollList;
+}
 
-//show in the history screen (load objects from local server)
+function updateHistory() {
+  const history = rollObjectList();
 
-//reset all inputs to zero
+  document.querySelector('#rollHistory').innerHTML = '';
+
+  for (var i = history.length-1; i >= 0; i--) {
+    const historyText = document.createElement('div');
+    historyText.classList.add('history-content');
+    historyText.innerHTML = `You rolled ${history[i].rollInfo} ${history[i].rollMod} and got a ${history[i].rollTotal}.`;
+    
+    document.querySelector('#rollHistory').appendChild(historyText);
+  }
+}
+
+function resetForm() {
+  diceObjects = [];
+  const dice = document.getElementsByClassName('diceInput');
+  const modifier = document.getElementById('modifier');
+  
+
+  for (var i = 0; i < dice.length; i++) {
+    dice[i].value = 0;
+  }
+  modifier.value = 0;
+}
+
+function clearHistory() {
+  localStorage.clear();
+  window.location.reload(false);
+}
+
+function removeNaturals() {
+  const viewport = document.getElementById('rolled');
+  if (viewport.className === 'nat20') {
+    viewport.classList.remove('nat20');
+  }
+  if (viewport.className === 'nat1') {
+    viewport.classList.remove('nat1');
+  }
+}
